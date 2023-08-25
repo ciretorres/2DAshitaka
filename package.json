@@ -1,0 +1,15 @@
+{
+    "name": "2DAshitaka",
+    "version": "0.1.0",
+    "description": "",
+    "author": "ciretorres",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ciretorres/2DAshitaka.git"
+    },
+    "bugs": {
+        "url": "https://github.com/ciretorres/2DAshitaka/issues"
+    },
+    "homepage": "https://github.com/ciretorres/2DAshitaka#readme",
+    "keywords": []
+}

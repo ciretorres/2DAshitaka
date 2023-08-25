@@ -1,2 +1,1 @@
-# Unity-2D
- Ashitaka2D Videogame
+# 2DAshitaka
