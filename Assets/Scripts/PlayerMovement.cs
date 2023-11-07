@@ -44,12 +44,12 @@ public class PlayerMovement : MonoBehaviour
             animator.SetFloat("moveX", change.x);
             animator.SetFloat("moveY", change.y);
 
-            animator.SetBool("moving", true);
+            //animator.SetBool("moving", true);
         }
         else
         {
             myRigidbody.velocity = Vector2.zero;
-            animator.SetBool("moving", false);
+            //animator.SetBool("moving", false);
         }
     }
 
