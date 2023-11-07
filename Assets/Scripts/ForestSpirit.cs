@@ -22,6 +22,9 @@ public class ForestSpirit : MonoBehaviour
 
     public GameObject text;
 
+    private GameObject ui;
+    private GameObject row;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -66,7 +69,13 @@ public class ForestSpirit : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             PlayerMovement moveScript = other.GetComponent<PlayerMovement>();
+            PlayerController moveScript2 = other.GetComponent<PlayerController>();
             moveScript.canMove = false;
+            moveScript2.canMove = false;
+
+            // Desapareciendo los corazones
+            row = GameObject.Find("Row");
+            row.SetActive(false);
 
             cam.minPosition += cameraChange;
             cam.maxPosition += cameraChange;

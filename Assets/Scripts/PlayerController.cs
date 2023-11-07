@@ -8,13 +8,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody2D _rigidbody;
     [SerializeField] private FixedJoystick _joystick;
     [SerializeField] private Animator _animator;
-    private Animator animator;
 
     [SerializeField] private float _moveSpeed;
 
+    public bool canMove;
+
     void Start()
     {
-        animator = GetComponent<Animator>();
+        canMove = true;
     }
 
     private void FixedUpdate()
@@ -22,16 +23,17 @@ public class PlayerController : MonoBehaviour
         _rigidbody.velocity = new Vector3(_joystick.Horizontal * _moveSpeed,
             _joystick.Vertical * _moveSpeed, _rigidbody.velocity.y);
 
-        if(_joystick.Horizontal != 0 || _joystick.Vertical != 0)
+        if (canMove && (_joystick.Horizontal != 0 || _joystick.Vertical != 0))
         {
             _animator.SetFloat("moveX", _joystick.Horizontal);
             _animator.SetFloat("moveY", _joystick.Vertical);
-            //_animator.SetBool("moving", true);
-            animator.SetBool("moving", true);
+
+            _animator.SetBool("moving", true);
         } else
         {
-            //_animator.SetBool("moving", false);
-            animator.SetBool("moving", false);
+            _rigidbody.velocity = Vector2.zero;
+
+            _animator.SetBool("moving", false);
         }
     }
 }

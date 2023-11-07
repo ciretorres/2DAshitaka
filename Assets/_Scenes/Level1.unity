@@ -654,12 +654,12 @@ GameObject:
   - component: {fileID: 381645584}
   - component: {fileID: 381645583}
   - component: {fileID: 381645582}
-  - component: {fileID: 381645586}
   - component: {fileID: 381645587}
   - component: {fileID: 381645590}
   - component: {fileID: 381645589}
   - component: {fileID: 381645588}
   - component: {fileID: 381645591}
+  - component: {fileID: 381645586}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -710,7 +710,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -791,7 +791,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02c2c60e2afa348758b582d2ad444740, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  _rigidbody: {fileID: 381645583}
+  _animator: {fileID: 381645587}
+  speed: 14
   canMove: 0
 --- !u!95 &381645587
 Animator:
@@ -874,7 +876,8 @@ MonoBehaviour:
   _rigidbody: {fileID: 381645583}
   _joystick: {fileID: 1024918824}
   _animator: {fileID: 381645587}
-  _moveSpeed: 5
+  _moveSpeed: 4
+  canMove: 0
 --- !u!1 &390876270
 GameObject:
   m_ObjectHideFlags: 0
@@ -910,7 +913,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 50}
+  m_SizeDelta: {x: 1000, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &390876272
 MonoBehaviour:
@@ -931,7 +934,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: To be continued...
+  m_text: Thanks, play again...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -958,8 +961,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 42
-  m_fontSizeBase: 42
+  m_fontSize: 114
+  m_fontSizeBase: 114
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -39051,7 +39054,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1682263995
 RectTransform:
   m_ObjectHideFlags: 0
