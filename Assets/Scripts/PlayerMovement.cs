@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    //private Rigidbody2D myRigidbody;
+    //private Animator animator;
+    [SerializeField] private Rigidbody2D _rigidbody;
+    [SerializeField] private Animator _animator;
+    
     public float speed;
-
-    private Rigidbody2D myRigidbody;
-    private Animator animator;
 
     private Vector3 change;
     
@@ -16,10 +18,8 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
-
-        myRigidbody = GetComponent<Rigidbody2D>();
-
+        //animator = GetComponent<Animator>();
+        //myRigidbody = GetComponent<Rigidbody2D>();
         canMove = true;
     }
 
@@ -41,20 +41,21 @@ public class PlayerMovement : MonoBehaviour
         {
             MoveCharacter();
 
-            animator.SetFloat("moveX", change.x);
-            animator.SetFloat("moveY", change.y);
+            _animator.SetFloat("moveX", change.x);
+            _animator.SetFloat("moveY", change.y);
 
-            animator.SetBool("moving", true);
+            _animator.SetBool("moving", true);
         }
         else
         {
-            myRigidbody.velocity = Vector2.zero;
-            animator.SetBool("moving", false);
+            //myRigidbody.velocity = Vector2.zero;
+            //animator.SetBool("moving", false);
         }
     }
 
     void MoveCharacter()
     {
-        myRigidbody.MovePosition(transform.position + change * speed * Time.deltaTime);
+        _rigidbody.MovePosition(transform.position + change 
+            * speed * Time.deltaTime);
     }
 }
