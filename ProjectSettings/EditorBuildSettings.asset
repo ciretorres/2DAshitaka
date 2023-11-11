@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Scenes/Level1.unity
+    path: Assets/deprecated/_Scenes/Level1.unity
     guid: 026203bf5dd224491a981a91ae8d096b
   - enabled: 1
-    path: Assets/_Scenes/Samples/Ashitaka0.1/Scenes/HUD 1.unity
+    path: Assets/deprecated/_Scenes/Samples/Ashitaka0.1/Scenes/HUD 1.unity
     guid: dab84261ddd954b65b7a4df7000c7f25
   m_configObjects: {}
